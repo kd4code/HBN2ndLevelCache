@@ -29,24 +29,24 @@ public class Customer_CRUD {
 //    s1.getTransaction().commit();
     
     s1.beginTransaction();
-//    Query q=s1.createQuery("from Customer").setCacheable(true);
-//   // Query q= s1.createNativeQuery("SELECT * FROM L2_Customer");
-//    List<Customer> al=q.list();
-//    System.out.println(al.size());
-//    for(Customer item:al)
-//    	 System.out.println(item);	
-    System.out.println(s1.get(Customer.class,103));
+    Query q=s1.createQuery("from Customer").setCacheable(true);
+   // Query q= s1.createNativeQuery("SELECT * FROM L2_Customer");
+    List<Customer> al=q.list();
+    System.out.println(al.size());
+    for(Customer item:al)
+    	 System.out.println(item);	
+//    System.out.println(s1.get(Customer.class,103));
     s1.getTransaction().commit();
     s1.close();
     
     System.out.println("\n2nd Session Started...");
     Session s2=sf.openSession();
     s2.beginTransaction();
-//    Query q1=s2.createQuery("from Customer").setCacheable(true);
-//    List<Customer> al1=q1.list();
-//    for(Customer item:al1)
-//    	System.out.println(item);
-    System.out.println(s2.get(Customer.class,103));
+    Query q1=s2.createQuery("from Customer").setCacheable(true);
+    List<Customer> al1=q1.list();
+    for(Customer item:al1)
+    	System.out.println(item);
+ //   System.out.println(s2.get(Customer.class,103));
     s2.getTransaction().commit();
     s2.close();;
     
